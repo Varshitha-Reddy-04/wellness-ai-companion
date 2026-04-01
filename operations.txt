@@ -1,0 +1,6 @@
+
+
+-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+-venv\Scripts\Activate.ps1
+-cd backend
+-uvicorn main:app --reload

@@ -1,0 +1,83 @@
+AI Mental Wellness Companion - Build Plan
+I see you already have a great starting point in the wellnessproject folder! You've got a basic index.html UI with charting and facial emotion detection, plus a FastAPI backend using SQLite!
+
+Here is the structured 30-day plan, the target folder structure, and the exact steps to transform your current codebase into a highly impressive, internship-ready AI project.
+
+User Review Required
+Please review the 30-day plan below. Once you approve, I can automatically start building and refactoring your code to follow this plan.
+
+Just tell me: "Looks good, let's start Phase 1!"
+
+IMPORTANT
+
+Since you have existing code, our very first step will be connecting your local UI (index.html) to your local backend (main.py) rather than the remote onrender.com URL, and upgrading the design to be more modern and dynamic.
+
+🗓️ 30-Day Daily Plan
+Phase 1: Solidifying the Core Tracker (Days 1-7)
+Goal: Ensure the foundation is rock solid, looks premium, and stores data locally.
+
+Day 1: Refactor existing index.html into a modern, dynamic UI (using sleek CSS/animations).
+Day 2: Update the UI to communicate with your local FastAPI backend instead of the external URL.
+Day 3: Add text-based "Journaling" functionality (a text area for users to write a short note). Update models.py and main.py to save these notes.
+Day 4: Improve the historical data API (/history) to return sorted data safely, and plot it beautifully using your Chart.js implementation.
+Day 5-6: Build out a proper "Dashboard" layout so users can see their stats at a glance.
+Day 7: Add form validation and error handling so the app doesn't crash on bad inputs.
+Phase 2: Pattern Detection & Rules (Days 8-14)
+Goal: Add smart rule-based insights without heavy ML.
+
+Day 8: Write a dedicated logic/pattern_detector.py file to replace the simple calculate_burnout logic with a more robust rule engine.
+Day 9: Detect multi-day streaks (e.g., "Low mood for 3 days").
+Day 10: Detect correlations (e.g., "Study hours ↑ → stress ↑") and return this in the API.
+Day 11: Surface these pattern alerts on the UI Dashboard (e.g., "⚠️ You might be burning out").
+Day 12-13: Expand the "Suggestions" engine to provide specific, actionable tips based on detected patterns.
+Day 14: Phase 2 review, code cleanup, and bug fixing.
+Phase 3: AI Intelligence (Days 15-21)
+Goal: The 🔥 WOW factor. Introducing real AI (NLP) for journal analysis.
+
+Day 15: Integrate a local lightweight NLP library (like TextBlob or VADER) for Sentiment Analysis on the journal text.
+Day 16: Adjust the overall Burnout Score dynamically based on textual sentiment + numerical data.
+Day 17: Optional: Integrate an OpenAI API key (if you have one) to generate highly personalized AI weekly summaries.
+Day 18: Build an AI Insights page in the UI that displays these deep insights.
+Day 19: Polish the facial emotion recognition (your face-api.js script) and ensure it feeds smoothly into the UI logs.
+Day 20-21: Finalize the AI pipeline and ensure error fallback mechanisms (so the app works even if the AI fails).
+Phase 4: Internship-Ready Polish & Deployment (Days 22-30)
+Goal: Make it resume-worthy and live.
+
+Day 22-23: Refactor the codebase (see proposed structure below). Separate routes, models, and logic to show architectural maturity.
+Day 24: Add an ethical disclaimer ("Not a medical tool") cleanly into the UI footer/modal.
+Day 25: Write a spectacular README.md with GIFs of the app, explaining the AI features and tech stack.
+Day 26-27: Containerize the application (write a Dockerfile and docker-compose.yml).
+Day 28-29: Deploy the backend (e.g., to Render or Railway) and the frontend (e.g., to Vercel or GitHub Pages).
+Day 30: Final testing, and adding the project to your resume!
+📁 Target Code Structure (Internship-Ready)
+To impress recruiters, your codebase shouldn't be just one giant main.py and index.html. We will gradually restructure your files to look like a professional monorepo:
+
+text
+wellnessproject/
+├── backend/
+│   ├── main.py              # Entry point for FastAPI
+│   ├── models/
+│   │   ├── database.py      # SQLAlchemy connection & setup
+│   │   └── schema.py        # Pydantic models (Request/Response)
+│   ├── routers/
+│   │   ├── logs.py          # API endpoints for mood logging
+│   │   └── insights.py      # API endpoints for pattern/AI insights
+│   ├── logic/
+│   │   ├── rule_engine.py   # Pattern detection logic
+│   │   └── ai_analyzer.py   # Sentiment analysis & AI wrap
+│   ├── requirements.txt
+│   └── wellness.db
+├── frontend/
+│   ├── index.html           # Main UI
+│   ├── css/
+│   │   └── style.css        # Premium, dynamic styling
+│   └── js/
+│   │   ├── app.js           # Main UI logic
+│   │   ├── api.js           # Fetch calls to backend
+│   │   └── ai_camera.js     # face-api.js logic isolation
+├── README.md                # Project documentation
+└── .gitignore
+Open Questions
+AI Strategy: For Phase 3, do you want to keep the AI completely free/local (using simple Python NLP libraries for sentiment), or do you want to use the OpenAI API (which requires an API key) for more advanced text generation?
+Frontend Styling: Do you want to continue using Vanilla HTML/CSS/JS, or would you like to level up and convert this UI into a React (or Next.js) app for an even more impressive resume bullet?
+Let me know what you think of the plan and answer the open questions, and we'll get straight to coding!
